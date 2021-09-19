@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import callApi from '../../api';
 import "./UserModal.scss";
-  
+
+import Loader from "../Loader/Loader"
+
 const mapStateToProps = state => {
   return {
       selectedCommunity : state.selectedCommunity
@@ -13,22 +15,20 @@ const UserModal = (props) => {
   const [data, setData] = useState();
   const [userList, setUserList] = useState("");
   const [selectedUser, setSelectedUser] = useState({photos:["","",""]});
-  const [isLoading, setIsLoading] = useState(true);
 
 
   useEffect(async () => {
-    setIsLoading(true);
+    document.getElementsByClassName("Loader__Container")[0].style.display = "block";
+    document.getElementsByClassName("UserModal__Modal")[0].style.height = "135px";
     let temp = await callApi();
     setData(temp);
     let com = props.selectedCommunity;
-    // console.log(props.selectedCommunity);
-    // setCommunity(document.getElementById("selectedCommunity").innerHTML);
     setUserList(temp[com]);
     if(temp[com] != undefined)
       temp[com].map(item => {
         document.getElementById("userList").innerHTML += `<option value=${item.name} />`;
       });
-      setIsLoading(false);
+    document.getElementsByClassName("Loader__Container")[0].style.display = "none";
   }, [props.selectedCommunity]);
 
 
@@ -59,11 +59,12 @@ const UserModal = (props) => {
               document.getElementById("userList").innerHTML = "";
               }
             }></div>
+            <Loader/>
             <div className="UserModal__Modal animate__animated animate__fadeIn">
                 <h1>{props.selectedCommunity}</h1>
-                <h2>Search to find user details</h2>
+                {/* <h2>Search to find user details</h2> */}
                 <h3>Click outside the modal to close</h3>
-                <input list="userList" onInput={()=>{input()}} id="userListInput" placeholder="Start typing here.."></input>
+                <input list="userList" onInput={()=>{input()}} id="userListInput" placeholder="Search for users.."></input>
                 <datalist id="userList" >
                 </datalist>
                 <div className="UserModal__UserInfo animate__animated animate__fadeIn">
