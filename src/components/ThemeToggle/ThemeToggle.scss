@@ -1,0 +1,111 @@
+.theme-light{
+    --fill:white;
+    --primary:black;
+    --red: #B0BEC5;
+    --redb:none;
+    --orange:#B0BEC5;
+    --orangeb:none;
+    --green:#B0BEC5;
+    --greenb:none;
+    --pink:#B0BEC5;
+    --pinkb:none;
+    --yellow:#B0BEC5;
+    --yellowb:none;
+    --violet:#B0BEC5;
+    --violetb:none;
+    --blue:#B0BEC5;
+    --blueb:none;
+ }
+ .theme-dark{
+    --fill:#37474F;
+    --primary:black;
+    --red: red;
+    --redb:red;
+    --orange:orange;
+    --orangeb:orange;
+    --green:#00E676;
+    --greenb:#00E676;
+    --pink:orange;
+    --pinkb:orange;
+    --yellow:yellow;
+    --yellowb:yellow;
+    --violet:#D500F9;
+    --violetb:#D500F9;
+    --blue:#00B0FF;
+    --blueb:#00B0FF;
+ }
+ /* toggle css */
+ 
+ .switch {
+    position: absolute;
+    display: inline-block;
+    width: 80px;
+    height:40px;
+    bottom:0%;
+    right:0%;
+    transform:translate(-50%, -50%);
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #ccc;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+ }
+ 
+ .slider:before {
+   position: absolute;
+   content: "";
+   height: 110%;
+   width: 60%;
+   left: 0px;
+   bottom: 4px;
+   top: 0;
+   bottom: 0;
+   margin: auto 0;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+   box-shadow: 0 0px 15px #2020203d;
+   background: white url('https://i.ibb.co/FxzBYR9/night.png');
+   background-repeat: no-repeat;
+   background-position: center;
+ }
+ 
+ input:checked + .slider {
+   background-color: #2196f3;
+ }
+ 
+ input:focus + .slider {
+   box-shadow: 0 0 1px #2196f3;
+ }
+ 
+ input:checked + .slider:before {
+   -webkit-transform: translateX(70%);
+   -ms-transform: translateX(70%);
+   transform: translateX(70%);
+   background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+   background-repeat: no-repeat;
+   background-position: center;
+ }
+ 
+ /* Rounded sliders */
+ .slider.round {
+   border-radius: 50px;
+ }
+ 
+ .slider.round:before {
+   border-radius: 50%;
+ }

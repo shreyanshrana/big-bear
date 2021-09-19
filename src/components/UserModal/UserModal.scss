@@ -1,0 +1,73 @@
+.UserModal{
+    &__Bg{
+        background: transparent;
+        backdrop-filter: blur(5px) contrast(50%);
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .dark-mode &__Modal{
+        background-color: #0F2027;
+        color: white;
+    }
+    &__Modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 135px;
+        width: 400px;
+        border-radius: 10px;
+        background: white;
+        transition: ease .5s;
+
+        & h1{
+            text-align: center;
+            padding: 10px 0 0 0;
+        }
+        & h2{
+            text-align: center;
+            font-size: 12px;
+            font-weight: 300;
+        }
+        
+        & h3{
+            text-align: center;
+            font-size: 9px;
+            font-weight: 300;
+        }
+        & input {
+            margin: 10px 0;
+            display: block;
+            width: 50%;
+            position: relative;
+            // top: 50%;
+            left: 50%;
+            transform: translate(-50%,0%);
+            border-radius: 10px;
+            border: 1px solid grey;
+            outline: none;
+            padding: 2px 7px;
+        }
+        & option{
+            background: red;
+        }
+    }
+    &__UserInfo{
+        display: none;
+        padding: 20px;
+        & h1{
+            font-size: 20px;
+            padding: 10px;
+            text-align: left;
+        }
+        &-Gallery {
+            & img{
+                cursor: pointer;
+                width: 33%;
+                height: 70px;
+                padding: 5px;
+            }
+        }
+    }
+}

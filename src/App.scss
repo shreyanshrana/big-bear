@@ -1,0 +1,100 @@
+.App{
+  height: 100vh;
+  width: 100vw;
+  background: #7F7FD5;  /* fallback for old browsers */
+  background: linear-gradient(to bottom,  #355C7D ,#6C5B7B, #C06C84 );
+  background-size: 100% 300%;
+  background-position:0 0;
+  position: absolute;
+  animation: animateGradient 10s ease infinite;
+}
+
+.dark-mode.App{
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100% 200%;
+  background-position:0 0;
+  position: absolute;
+  animation: animateGradient 10s ease infinite;
+}
+
+@keyframes animateGradient {
+  0%   {background-position: 0 0;}
+  50%  {background-position: 0 100%;}
+  100% {background-position: 0 0;}
+}
+
+.dark-mode .App__Container{
+  background-color: #0F2027;
+  color:white;
+
+  & .App__Title{
+    color: white;
+
+    & p{
+      color: whitesmoke;
+    }
+  }
+}
+.App__Container{
+  transition: ease .5s;
+  background-color: #dce6f1  ;
+  color: black;
+  width: 75%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+@media screen and (max-width : 500px) {
+  .App__Container{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0%,0%);
+    top:0;
+    left: 0;
+    text-align: center;
+  }
+  .App__Title{
+    padding: 5px !important;
+  }
+}
+
+@media screen and (max-width : 900px) {
+  .App hr{
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}
+
+.App__Title{
+  width: 100%;
+  /* color:white; */
+  color:black;
+  /* text-align: center; */
+  font-weight: 700;
+  font-size: 45px;
+  padding: 25px 110px;
+}
+.App__Title p{
+  font-size: 16px;
+  font-weight: 300;
+  color: grey;
+}
+.App__CommunityContainer{
+  padding: 10px;
+  text-align: center;
+  overflow: auto;
+}
+.App hr{
+  width: 80%;
+  margin: 5px 110px;;
+}
